@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananda Behavioral Health - Psychiatric Care in Fresno, California</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8941F;
+            --cream: #F6F3ED;
+            --dark-charcoal: #2E2E2E;
+            --light-gray: #F9F8F6;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 20px;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            flex: 1;
+        }
+        
+        .contact-info-header {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--dark-charcoal) !important;
+            text-transform: uppercase;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+            white-space: nowrap;
+        }
+        
+        .header {
+            background-color: white;
+            border-bottom: 1px solid #E8E4DC;
+        }
+        
+        .navbar a {
+            color: var(--dark-charcoal);
+            transition: color 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            color: var(--gold);
+        }
+        
+        .btn-appointment {
+            background-color: var(--gold);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-appointment:hover {
+            background-color: var(--dark-gold);
+        }
+        
+        .hero {
+            background-color: var(--cream);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .hero .tagline {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background-color: var(--gold) !important;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-gold);
+        }
+        
+        .btn-secondary {
+            background-color: white !important;
+            color: var(--dark-charcoal) !important;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #F0F0F0 !important;
+            color: var(--dark-charcoal) !important;
+        }
+        
+        .trust-builder {
+            background-color: white;
+            padding: 60px 20px;
+            border-top: 1px solid #E8E4DC;
+            border-bottom: 1px solid #E8E4DC;
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .trust-item {
+            text-align: center;
+        }
+        
+        .trust-item p {
+            color: var(--dark-charcoal);
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .trust-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+            min-height: 40px;
+        }
+        
+        .services-section {
+            background-color: var(--light-gray);
+            padding: 60px 20px;
+        }
+        
+        .services-section h2 {
+            font-size: 32px;
+            color: var(--dark-charcoal);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .services-section .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .services-grid-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-item h3 {
+            color: var(--dark-charcoal);
+            font-size: 20px;
+            margin: 15px 0;
+        }
+        
+        .service-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .testimonials-section {
+            background-color: white;
+            padding: 60px 20px;
+            border-top: 1px solid #E8E4DC;
+            border-bottom: 1px solid #E8E4DC;
+        }
+        
+        .testimonials-section h2 {
+            font-size: 32px;
+            color: var(--dark-charcoal);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .testimonials-section .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--cream);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .testimonial-card .stars {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            color: #444;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            color: var(--dark-charcoal);
+            font-weight: 600;
+        }
+        
+        .testimonial-author span {
+            color: #999;
+            font-weight: 400;
+        }
+        
+        .doctor-section {
+            background-color: white;
+            padding: 60px 20px;
+        }
+        
+        .doctor-section h2 {
+            color: var(--dark-charcoal);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .credentials {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .doctor-section h3 {
+            color: var(--dark-charcoal);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .qualifications-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .qualifications-list li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #EEE;
+        }
+        
+        .insurance-section {
+            background-color: var(--light-gray);
+            padding: 60px 20px;
+        }
+        
+        .insurance-section h2 {
+            text-align: center;
+            color: var(--dark-charcoal);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .insurance-section .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .insurance-item {
+            background-color: white;
+            padding: 30px !important;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .insurance-item h3 {
+            color: var(--gold) !important;
+            font-size: 18px !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 0 0 35px !important;
+            white-space: normal !important;
+            overflow: visible !important;
+            display: block !important;
+            line-height: 1.5 !important;
+            position: relative !important;
+        }
+        
+        .insurance-item h3::before {
+            content: "✓" !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+        }
+        
+        .insurance-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact-section {
+            background-color: white !important;
+            background-image: none !important;
+            padding: 60px 20px;
+        }
+        
+        .contact-section::before {
+            display: none !important;
+        }
+        
+        .contact-info {
+            background: var(--cream) !important;
+            background-image: none !important;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #E8E4DC;
+        }
+        
+        .contact-info h3 {
+            color: var(--dark-charcoal) !important;
+        }
+        
+        .contact-detail {
+            border-bottom: 1px solid #E8E4DC !important;
+        }
+        
+        .contact-detail h4 {
+            color: var(--gold) !important;
+        }
+        
+        .contact-detail p a {
+            color: var(--gold) !important;
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            color: var(--dark-charcoal);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-section .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail h4 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        .contact-detail p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            padding: 10px;
+            width: 100%;
+            font-family: inherit;
+        }
+        
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .footer {
+            background-color: var(--dark-charcoal);
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .footer h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .footer a {
+            color: #CCC;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--gold);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+        }
+        
+        /* Override external stylesheet colors */
+        .hero {
+            background: var(--cream) !important;
+            background-image: none !important;
+            color: var(--dark-charcoal) !important;
+        }
+        
+        .hero::before,
+        .hero::after {
+            display: none !important;
+        }
+        
+        .hero h1 {
+            color: var(--dark-charcoal) !important;
+        }
+        
+        .hero .tagline {
+            color: #555 !important;
+        }
+        
+        .doctor-section {
+            background-color: var(--cream) !important;
+            background: var(--cream) !important;
+            background-image: none !important;
+        }
+        
+        .insurance-section {
+            background-color: var(--light-gray) !important;
+            background-image: none !important;
+            padding: 60px 20px;
+            border-top: 1px solid #E8E4DC !important;
+            border-bottom: 1px solid #E8E4DC !important;
+        }
+        
+        .services-section {
+            background-color: var(--light-gray) !important;
+        }
+        
+        .service-item {
+            background-color: white !important;
+            border-top: 4px solid var(--gold) !important;
+        }
+        
+        .service-item:hover {
+            background-color: white !important;
+            transform: translateY(-5px) !important;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15) !important;
+            border-top: 4px solid var(--dark-gold) !important;
+        }
+        
+        .qualifications-list {
+            list-style: none !important;
+            padding: 0 20px !important;
+            margin: 20px 0 !important;
+        }
+        
+        .qualifications-list li {
+            padding: 20px 0 20px 20px !important;
+            color: #555 !important;
+            border-bottom: 1px solid #E8E4DC !important;
+            margin: 0 !important;
+            position: relative !important;
+        }
+        
+        .qualifications-list li::before {
+            content: "\2022" !important;
+            position: absolute !important;
+            left: 0 !important;
+            color: var(--gold) !important;
+            font-weight: bold !important;
+            font-size: 18px !important;
+        }
+        
+        .qualifications-list li:last-child {
+            border-bottom: none !important;
+        }
+        
+        /* Ensure no blue text in sections */
+        .doctor-info h3,
+        .insurance-item h3,
+        .service-item h3 {
+            color: var(--dark-charcoal) !important;
+        }
+        
+        .testimonials-section {
+            background-color: white !important;
+        }
+        
+        .doctor-info a.btn-primary,
+        .doctor-section a.btn-primary {
+            background-color: var(--gold) !important;
+            color: white !important;
+        }
+        
+        .btn.btn-primary {
+            background-color: var(--gold) !important;
+            color: white !important;
+            padding: 14px 30px !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            transition: background-color 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            display: inline-block !important;
+        }
+        
+        .btn.btn-primary:hover {
+            background-color: var(--dark-gold) !important;
+        }
+        
+        .doctor-info .btn-primary {
+            background-color: var(--gold) !important;
+            color: white !important;
+        }
+        
+        .doctor-section .qualifications-list li {
+            color: #555 !important;
+        }
+        
+        .testimonials-section {
+            background-color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="ananda_bh_logo.png" alt="Ananda Behavioral Health Logo">
+                    <h1>Ananda Behavioral Health</h1>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="contact-info-header">
+                    <a href="#contact" class="btn-appointment">Request Appointment</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Behavioral Health & Psychiatric Care in Fresno, California</h1>
+            <p class="tagline">Personalized, evidence-based treatment for anxiety, depression, ADHD, and mood disorders — delivered with compassion and clinical expertise.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Request Appointment</a>
+                <a href="tel:559-389-5845" class="btn btn-secondary">Call 559-389-5845 ext. 2222</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Builder Section -->
+    <section class="trust-builder">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🏥</div>
+                    <p>Board-Certified Psychiatric Care</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💊</div>
+                    <p>Medication Management</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">📱</div>
+                    <p>In-Person & Telehealth Appointments</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">📍</div>
+                    <p>Conveniently Located in North Fresno</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Doctor Section -->
+    <section id="about" class="doctor-section">
+        <div class="container">
+            <div class="doctor-content">
+                <div class="doctor-image" style="max-width: 300px; width: 100%;">
+                    <img src="maninder_picture.jpg" alt="Dr. Maninder Aulakh" style="width: 100%; height: auto;">
+                </div>
+                <div class="doctor-info">
+                    <h2>Dr. Maninder Aulakh</h2>
+                    <p class="credentials">Board-Certified Psychiatrist</p>
+                    
+                    <h3>About Me</h3>
+                    <p>I am a board-certified psychiatrist providing comprehensive outpatient and telehealth services for adults. My approach combines careful diagnostic evaluation, evidence-based medication management, and a collaborative treatment plan tailored to each individual.</p>
+                    
+                    <h3>My Approach</h3>
+                    <p>I believe effective psychiatric care begins with listening. Every patient's experience is unique, and treatment should reflect that. My goal is to create a space where you feel heard, respected, and actively involved in your care.</p>
+                    
+                    <h3>Treatment Focus</h3>
+                    <p>I treat a range of conditions including anxiety disorders, depression, bipolar disorder, ADHD, and trauma-related disorders. Whether you are navigating ongoing symptoms or a new life transition, I aim to provide clear guidance and structured, compassionate care.</p>
+
+                    <h3>Credentials</h3>
+                    <ul class="qualifications-list">
+                        <li>Board-Certified Psychiatrist</li>
+                        <li>Licensed in California and Florida</li>
+                        <li>Inpatient, Outpatient & Telepsychiatry Services</li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary">Schedule Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Specialties</h2>
+            <p class="section-subtitle">Comprehensive Behavioral Health Treatment Services</p>
+            <div class="services-grid-detailed">
+                <div class="service-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em' fill='white'%3E😟%3C/text%3E%3C/svg%3E" alt="Anxiety Disorders">
+                    <h3>Anxiety Disorders</h3>
+                    <p>Expert treatment for generalized anxiety, panic disorder, and social anxiety with proven therapeutic techniques.</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em' fill='white'%3E😔%3C/text%3E%3C/svg%3E" alt="Depression">
+                    <h3>Depression</h3>
+                    <p>Compassionate care for major depressive disorder and mood disorders with individualized treatment plans.</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em' fill='white'%3E🎭%3C/text%3E%3C/svg%3E" alt="Personality Disorders">
+                    <h3>Personality Disorders</h3>
+                    <p>Specialized treatment for personality disorders with evidence-based therapeutic interventions.</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em' fill='white'%3E🧩%3C/text%3E%3C/svg%3E" alt="Behavioral Therapy">
+                    <h3>Behavioral Therapy</h3>
+                    <p>Cognitive-behavioral therapy (CBT) and other behavioral interventions for lasting change.</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em' fill='white'%3E🛑%3C/text%3E%3C/svg%3E" alt="Substance Abuse">
+                    <h3>Substance Abuse Treatment</h3>
+                    <p>Comprehensive addiction recovery services with medication-assisted treatment options.</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em' fill='white'%3E🧠%3C/text%3E%3C/svg%3E" alt="Schizophrenia">
+                    <h3>Schizophrenia</h3>
+                    <p>Comprehensive assessment and evidence-based treatment for schizophrenia, including medication management and psychotherapy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance & Access Section -->
+    <section class="insurance-section">
+        <div class="container">
+            <h2>Insurance & Accessibility</h2>
+            <p class="section-subtitle">We Make Healthcare Accessible to All</p>
+            <div class="insurance-grid">
+                <div class="insurance-item">
+                    <h3>Insurance Accepted</h3>
+                    <p>We accept all major insurance plans including Medicare, Medicaid, and private insurances.</p>
+                </div>
+                <div class="insurance-item">
+                    <h3>Affordable Care</h3>
+                    <p>Flexible payment options and sliding scale fees available for uninsured patients.</p>
+                </div>
+                <div class="insurance-item">
+                    <h3>Accessible Location</h3>
+                    <p>Conveniently located with easy access, ample parking, and accessible facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Our Patients Say</h2>
+            <p class="section-subtitle">Success Stories from Our Satisfied Patients</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Dr. Aulakh is an exceptional physician. His professionalism, dedication, and genuine care for his patients are evident in every interaction. I highly recommend him."</p>
+                    <p class="testimonial-author">- Sarah Johnson, <span>Business Executive</span></p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I have been seeing Dr. Aulakh for over 5 years. He takes time to listen, explains everything clearly, and always puts my health first. Couldn't ask for a better doctor."</p>
+                    <p class="testimonial-author">- Michael Chen, <span>Healthcare Professional</span></p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Dr. Aulakh helped me manage my chronic condition with a comprehensive approach. His medical expertise combined with compassion makes him truly special."</p>
+                    <p class="testimonial-author">- Lisa Rodriguez, <span>Patient</span></p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The level of care and attention to detail is outstanding. Dr. Aulakh goes above and beyond to ensure his patients receive the best possible treatment."</p>
+                    <p class="testimonial-author">- James Wilson, <span>Retired Teacher</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Schedule Your Appointment Today</p>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <form id="contactForm" method="POST" action="https://formsubmit.co/psychiatry@anandabh.com">
+                        <!-- FormSubmit (free) hidden fields -->
+                        <input type="hidden" name="_subject" value="New contact form submission — Ananda Behavioral Health">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="./index.html?success=1">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for Visit *</label>
+                            <select id="reason" name="reason" required>
+                                <option value="">Select a reason...</option>
+                                <option value="checkup">Annual Check-up</option>
+                                <option value="followup">Follow-up Visit</option>
+                                <option value="consultation">Medical Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <h4>📍 Address</h4>
+                        <p>8050 N. Palm Ave, Suite 300<br>Fresno, CA 93711<br>United States</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>📧 Email</h4>
+                        <p><a href="mailto:psychiatry@anandabh.com">psychiatry@anandabh.com</a></p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>🕐 Office Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Medication Management</a></li>
+                        <li><a href="#services">Psychotherapy</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ananda Behavioral Health. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>Dedicated to improving lives through compassionate behavioral health care</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
