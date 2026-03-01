@@ -816,6 +816,19 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.calendar-embed {
+  width: 100%;
+  display: grid;
+  margin-bottom: 20px;
+  justify-content: center;   /* centers horizontally */
+}
+
+.calendar-embed iframe {
+  width: 100%;
+  max-width: 700px;
+  height: fit-content;
+}
+
 .form-group {
     margin-bottom: 1.8rem;
 }
